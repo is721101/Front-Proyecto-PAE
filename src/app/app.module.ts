@@ -7,13 +7,20 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { PlatillosComponent } from './components/platillos/platillos.component';
 import { CartComponent } from './components/cart/cart.component';
+import { OrdenarComponent } from './components/ordenar/ordenar.component';
+import { GraciasComponent } from './components/gracias/gracias.component';
+import { NotificacionesComponent } from './components/notificaciones/notificaciones.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     PlatillosComponent,
-    CartComponent
+    CartComponent,
+    OrdenarComponent,
+    GraciasComponent,
+    NotificacionesComponent,
+    
   ],
   imports: [
     BrowserModule,

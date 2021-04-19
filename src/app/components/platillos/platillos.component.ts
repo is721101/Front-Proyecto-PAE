@@ -58,7 +58,13 @@ export class PlatillosComponent implements OnInit {
   sendPedido(){
     this.pedidoService.createPedido(this.platilloSelected)
     .subscribe(
-      res=>console.log(res),
+      res=>{console.log(res)
+      let noti={mesa:this.pedidoService.table,tipo:"Servir "+this.platilloSelected.amount+" "+this.platilloSelected.description}
+      this.platilloService.notif(noti).subscribe(
+          res=>console.log(res),
+          err=>console.log(err)
+        )
+      },
       err=>console.log(err)
     )
     

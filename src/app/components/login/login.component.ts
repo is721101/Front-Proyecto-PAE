@@ -15,24 +15,23 @@ export class LoginComponent implements OnInit {
   }
 
   validate(mesa,id) {
-    console.log("mesa: "+ mesa.value)
-    console.log("id: "+ id.value)
     
     this.pedidoService.getVerify(mesa.value,id.value).subscribe(
       res=>{
-        this.pedidoService.table=mesa.value
-        //localStorage.setItem("Mesa",mesa.value)
-        this.pedidoService.password=id.value
-        //localStorage.setItem("Password",id.value)
+        
         if(res=="pasa"){
+          this.pedidoService.table=mesa.value
+          this.pedidoService.password=id.value
           this.router.navigate(["/platillos"])
         }
         else{
-          alert("Usa los datos de tu mesa")
+            alert("Datos incorrectos")
         }
-        
       },
-      err=>console.log(err)
+      err=>{
+        console.log(err)
+        
+      }
     )
 
     return false
