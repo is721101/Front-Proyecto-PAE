@@ -6,7 +6,7 @@ import {PlatillosComponent} from '../app/components/platillos/platillos.componen
 import { CartComponent } from './components/cart/cart.component';
 import { MiddleGuard } from './middle.guard';
 import {GraciasComponent} from '../app/components/gracias/gracias.component'
-import {NotificacionesComponent} from '../app/components/notificaciones/notificaciones.component'
+import {NotificacionesComponent} from './components/notificaciones/notificaciones.component'
 import { EmployeeCRUDComponent } from './components/employee-crud/employee-crud.component';
 import { MesaCRUDComponent } from './components/mesa-crud/mesa-crud.component';
 import { PlatilloCRUDComponent } from './components/platillo-crud/platillo-crud.component';
