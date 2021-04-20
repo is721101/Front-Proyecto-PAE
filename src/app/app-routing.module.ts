@@ -6,7 +6,7 @@ import {PlatillosComponent} from '../app/components/platillos/platillos.componen
 import { CartComponent } from './components/cart/cart.component';
 import { MiddleGuard } from './middle.guard';
 import {GraciasComponent} from '../app/components/gracias/gracias.component'
-import {NotificacionesComponent} from '../app/components/notificaciones/notificaciones.component'
+import {NotificacionesComponent} from './components/notificaciones/notificaciones.component'
 const routes: Routes = [
   {path:"",component:LoginComponent},
   {path:"login",component:LoginComponent},
