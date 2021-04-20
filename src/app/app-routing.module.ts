@@ -7,6 +7,10 @@ import { CartComponent } from './components/cart/cart.component';
 import { MiddleGuard } from './middle.guard';
 import {GraciasComponent} from '../app/components/gracias/gracias.component'
 import {NotificacionesComponent} from './components/notificaciones/notificaciones.component'
+import { EmployeeCRUDComponent } from './components/employee-crud/employee-crud.component';
+import { MesaCRUDComponent } from './components/mesa-crud/mesa-crud.component';
+import { PlatilloCRUDComponent } from './components/platillo-crud/platillo-crud.component';
+
 const routes: Routes = [
   {path:"",component:LoginComponent},
   {path:"login",component:LoginComponent},
@@ -15,6 +19,9 @@ const routes: Routes = [
   {path:"ordenar",component:OrdenarComponent},
   {path:"agradecimiento",component:GraciasComponent},
   {path:"Notificaciones",component:NotificacionesComponent},
+  {path: 'CRUD/employees',component:EmployeeCRUDComponent},
+  {path: 'CRUD/mesas',component:MesaCRUDComponent},
+  {path: 'CRUD/platillos',component:PlatilloCRUDComponent},
 ];
 
 @NgModule({
