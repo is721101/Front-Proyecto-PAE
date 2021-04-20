@@ -19,6 +19,7 @@ import { EmployeeCRUDComponent } from './components/employee-crud/employee-crud.
 import { MesaCRUDComponent } from './components/mesa-crud/mesa-crud.component';
 import { PlatilloCRUDComponent } from './components/platillo-crud/platillo-crud.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginCrudComponent } from './login-crud/login-crud.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EmployeeCRUDComponent,
     MesaCRUDComponent,
     PlatilloCRUDComponent,
+    LoginCrudComponent,
     
   ],
   imports: [

@@ -10,6 +10,7 @@ import {NotificacionesComponent} from '../app/components/notificaciones/notifica
 import { EmployeeCRUDComponent } from './components/employee-crud/employee-crud.component';
 import { MesaCRUDComponent } from './components/mesa-crud/mesa-crud.component';
 import { PlatilloCRUDComponent } from './components/platillo-crud/platillo-crud.component';
+import { LoginCrudComponent } from './login-crud/login-crud.component';
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'CRUD/employees',component:EmployeeCRUDComponent},
   {path: 'CRUD/mesas',component:MesaCRUDComponent},
   {path: 'CRUD/platillos',component:PlatilloCRUDComponent},
+  {path: 'CRUD/login', component:LoginCrudComponent}
 ];
 
 @NgModule({
