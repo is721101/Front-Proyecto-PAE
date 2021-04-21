@@ -11,6 +11,7 @@ import { EmployeeCRUDComponent } from './components/employee-crud/employee-crud.
 import { MesaCRUDComponent } from './components/mesa-crud/mesa-crud.component';
 import { PlatilloCRUDComponent } from './components/platillo-crud/platillo-crud.component';
 import { LoginCrudComponent } from './login-crud/login-crud.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path: 'CRUD/employees',component:EmployeeCRUDComponent},
   {path: 'CRUD/mesas',component:MesaCRUDComponent},
   {path: 'CRUD/platillos',component:PlatilloCRUDComponent},
-  {path: 'CRUD/login', component:LoginCrudComponent}
+  {path: 'CRUD/login', component:LoginCrudComponent},
+  {path: 'landingpage',component:LandingPageComponent}
 ];
 
 @NgModule({

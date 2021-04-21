@@ -20,6 +20,7 @@ import { MesaCRUDComponent } from './components/mesa-crud/mesa-crud.component';
 import { PlatilloCRUDComponent } from './components/platillo-crud/platillo-crud.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginCrudComponent } from './login-crud/login-crud.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { LoginCrudComponent } from './login-crud/login-crud.component';
     MesaCRUDComponent,
     PlatilloCRUDComponent,
     LoginCrudComponent,
+    LandingPageComponent,
     
   ],
   imports: [
