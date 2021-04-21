@@ -10,9 +10,10 @@ export class MesaCRUDService {
   URL_API = 'http://localhost:3000/api/mesas';
 
   selectedMesa : Mesa ={
-    nombre:'',
-    id:'',
-    activo: 0
+   
+    id:0,
+    activo: false,
+    codigo : '',
   };
 
   mesas : Mesa[];
