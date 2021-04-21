@@ -6,13 +6,13 @@
                 <form #mesaForm="ngForm" (ngSubmit)="addMesa(mesaForm)" >
                     <input type="hidden" name="_id" [(ngModel)]="MesaService.selectedMesa._id">
                     <div class="form-group">
-                        <input type="text" name="nombre" class="form-control" placeholder="Enter mesa nombre" [(ngModel)]="MesaService.selectedMesa.nombre">
-                    </div>
-                    <div class="form-group">
                         <input type="text" name="id" class="form-control" placeholder="Enter id" [(ngModel)]="MesaService.selectedMesa.id">
                     </div>
                     <div class="form-group">
                         <input type="text" name="activo" class="form-control" placeholder="Enter status" [(ngModel)]="MesaService.selectedMesa.activo">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="codigo" class="form-control" placeholder="Enter code" [(ngModel)]="MesaService.selectedMesa.codigo">
                     </div>
                     <button class="btn btn-primary mr-2" (click)="resetForm(mesaForm)">
                         Clean
@@ -29,21 +29,22 @@
             <thead>
                 <tr>
                     <th>
-                        Nombre
-                    </th>
-                    <th>
                         ID
                     </th>
                     <th>
                         Activo
                     </th>
+                    <th>
+                        Codigo
+                    </th>
+ 
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let mesa of MesaService.mesas"> 
-                    <td>{{mesa.nombre}}</td>
                     <td>{{mesa.id}}</td>
                     <td>{{mesa.activo}}</td>
+                    <td>{{mesa.codigo}}</td>
                     <td>
                         <button class="btn btn-secondary btn-sm" (click)="editMesa(mesa)" ><i class="material-icons">edit</i></button>
                         <button class="btn btn-danger btn-sm" (click)="deleteMesa(mesa._id)" ><i class="material-icons">delete</i></button>

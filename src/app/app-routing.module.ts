@@ -10,6 +10,8 @@ import {NotificacionesComponent} from './components/notificaciones/notificacione
 import { EmployeeCRUDComponent } from './components/employee-crud/employee-crud.component';
 import { MesaCRUDComponent } from './components/mesa-crud/mesa-crud.component';
 import { PlatilloCRUDComponent } from './components/platillo-crud/platillo-crud.component';
+import { LoginCrudComponent } from './login-crud/login-crud.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
@@ -18,10 +20,13 @@ const routes: Routes = [
   {path:"cuenta",component:CartComponent,canActivate:[MiddleGuard]},
   {path:"ordenar",component:OrdenarComponent},
   {path:"agradecimiento",component:GraciasComponent},
-  {path:"Notificaciones",component:NotificacionesComponent},
+  {path: 'CRUD',component:EmployeeCRUDComponent},
   {path: 'CRUD/employees',component:EmployeeCRUDComponent},
   {path: 'CRUD/mesas',component:MesaCRUDComponent},
   {path: 'CRUD/platillos',component:PlatilloCRUDComponent},
+  {path: 'CRUD/login', component:LoginCrudComponent},
+  {path: 'CRUD/notificaciones', component:NotificacionesComponent},
+  {path: 'landingpage',component:LandingPageComponent}
 ];
 
 @NgModule({
