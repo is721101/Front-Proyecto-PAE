@@ -20,11 +20,12 @@ const routes: Routes = [
   {path:"cuenta",component:CartComponent,canActivate:[MiddleGuard]},
   {path:"ordenar",component:OrdenarComponent},
   {path:"agradecimiento",component:GraciasComponent},
-  {path:"Notificaciones",component:NotificacionesComponent},
+  {path: 'CRUD',component:EmployeeCRUDComponent},
   {path: 'CRUD/employees',component:EmployeeCRUDComponent},
   {path: 'CRUD/mesas',component:MesaCRUDComponent},
   {path: 'CRUD/platillos',component:PlatilloCRUDComponent},
   {path: 'CRUD/login', component:LoginCrudComponent},
+  {path: 'CRUD/notificaciones', component:NotificacionesComponent},
   {path: 'landingpage',component:LandingPageComponent}
 ];
 
