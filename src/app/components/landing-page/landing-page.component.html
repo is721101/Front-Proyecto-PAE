@@ -1,0 +1,169 @@
+<div class="landing-page">
+    <body>
+        <header>
+            <a href="#" class="logo">Hamburguer <span>.</span></a>
+            <div class="menuToggle" onclick="toggleMenu();"></div>
+            <ul class="navigation">
+                <li><a href="#banner">Home</a></li>
+                <li><a href="#about">Nosotros</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#expert">Expert</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </header>
+        <section class="banner" id="banner">
+            <div class="content">
+                <h2>Always Choose Good</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Obcaecati eaque suscipit repellendus incidunt rerum ex quasi voluptatum officia sed dolores,
+                    cumque velit distinctio impedit mollitia exercitationem nisi odio sequi sit?
+                </p>
+                <a href="#" class="btn">Ingresar</a>
+            </div>
+        </section>
+        <section class="about" id="about">
+            <div class="row">
+                <div class="col50">
+                    <h2 class="titleText"><span>N</span>osotros</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam harum odit voluptatibus 
+                        magni ex, ipsa architecto adipisci, 
+                        omnis itaque nostrum suscipit temporibus vel et quas nemo numquam aliquam cum aspernatur.
+                    </p>
+                    <br><br>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam harum odit voluptatibus 
+                        magni ex, ipsa architecto adipisci, 
+                        omnis itaque nostrum suscipit temporibus vel et quas nemo numquam aliquam cum aspernatur.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam harum odit voluptatibus 
+                        magni ex, ipsa architecto adipisci, 
+                        omnis itaque nostrum suscipit temporibus vel et quas nemo numquam aliquam cum aspernatur.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam harum odit voluptatibus 
+                        magni ex, ipsa architecto adipisci, 
+                        omnis itaque nostrum suscipit temporibus vel et quas nemo numquam aliquam cum aspernatur.
+                    </p>
+                </div>
+                <div class="col50">
+                    <div class="imgBx">
+                        <img src="https://images.pexels.com/photos/1251196/pexels-photo-1251196.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" >
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section class="menu" id="menu">
+            <div class="title">
+                <h2 class="titleText">Our<span>M</span>enu</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                    Cumque nemo delectus dolorem cupiditate repudiandae ea atque quas, 
+                    sunt eligendi velit tempora possimus facilis rerum? Omnis cum repellendus id saepe dolore!
+                </p>
+                <div class="content">
+                    <div class="box" *ngFor="let platillo of LandingPageService.platillos" >
+                        <div class="imgBx">
+                            <img src={{platillo.urlImage}}>
+                        </div>
+                        <div class="text">
+                            <h3>{{platillo.description}} </h3>
+                        </div>
+                    </div>
+                </div>
+                 
+
+
+
+            </div>
+
+            <div class="title">
+                <a href="#" class="btn">View all</a>
+            </div>
+
+        </section>
+
+        <section class="expert" id="expert">
+            <div class="title">
+                <h2 class="titleText">Our Kitechen <span>E</span>xpert</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos assumenda deserunt 
+                    odit laudantium! Adipisci, dolores! Saepe amet a ipsam quisquam consequatur autem assumenda perferendis 
+                    libero qui, minus necessitatibus illo! Recusandae.
+                </p>
+                <div class="content">
+                    <div class="box" *ngFor="let employee of LandingPageService.employees" >
+                        <div class="imgBx">
+                            <img src="https://images.pexels.com/photos/4457124/pexels-photo-4457124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+                        </div>
+                        <div class="text">
+                            <h2>{{employee.name}} {{employee.lastname}}</h2>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="testimonials" id="testimonials">
+            <div class="title white">
+                <h2 class="titleText">They <span>S</span>aid About Us</h2>
+                <p>lorem ipsum dolor sit amet, consecteteur apdipiscing elit.</p>
+            </div>
+            <div class="content">
+                <div class="box">
+                    <div class="imgBx">
+                        <img src="./Images/testi1.jpg" >
+                    </div>
+                    <div class="text">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing 
+                            elit. Consectetur corporis non, qui quo esse nam quam, 
+                            aspernatur temporibus quasi neque sit fugiat ipsa atque natus eligendi nulla deserunt quisquam ut?
+                            Lorem ipsum dolor sit amet consectetur adipisicing 
+                            elit. Consectetur corporis non, qui quo esse nam quam, 
+                            aspernatur temporibus quasi neque sit fugiat ipsa atque natus eligendi nulla deserunt quisquam ut?
+                        </p>
+                        <h3>Someone Famous</h3>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBx">
+                        <img src="./Images/testi2.jpg" >
+                    </div>
+                    <div class="text">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing 
+                            elit. Consectetur corporis non, qui quo esse nam quam, 
+                            aspernatur temporibus quasi neque sit fugiat ipsa atque natus eligendi nulla deserunt quisquam ut?
+                            Lorem ipsum dolor sit amet consectetur adipisicing 
+                            elit. Consectetur corporis non, qui quo esse nam quam, 
+                            aspernatur temporibus quasi neque sit fugiat ipsa atque natus eligendi nulla deserunt quisquam ut?
+                        </p>
+                        <h3>Someone Famous</h3>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBx">
+                        <img src="./Images/testi3.jpg" >
+                    </div>
+                    <div class="text">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing 
+                            elit. Consectetur corporis non, qui quo esse nam quam, 
+                            aspernatur temporibus quasi neque sit fugiat ipsa atque natus eligendi nulla deserunt quisquam ut?
+                            Lorem ipsum dolor sit amet consectetur adipisicing 
+                            elit. Consectetur corporis non, qui quo esse nam quam, 
+                            aspernatur temporibus quasi neque sit fugiat ipsa atque natus eligendi nulla deserunt quisquam ut?
+                        </p>
+                        <h3>Someone Famous</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="copyrighText">
+            <p>Copyright 2020  equipo </p>
+        </div>
+
+      
+        
+    </body>
+</div>
+
