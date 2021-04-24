@@ -23,10 +23,12 @@ export class CartComponent implements OnInit {
         
     //console.log(this.pedidos)
       this.pedidos.forEach(element => {
+      
       let precio=element.precio
       let cantidad=element.cantidad
-
+        console.log(precio+" "+cantidad);
       this.total+=(parseInt(precio)*parseInt(cantidad))
+      console.log(this.total)
     });
       
       

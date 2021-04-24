@@ -17,11 +17,10 @@ export class NotificacionesComponent implements OnInit {
     this.platilloService.getNotificaciones()
     .subscribe(
       res=>{this.Notificaciones=res
-            console.log(this.Notificaciones)
       },
       err=>console.log(err)
     ) 
-    this.Subscription=this.platilloService.NotificationSubject$.subscribe({
+    this.Subscription=this.platilloService.SocketNotificacion().subscribe({
       next:(notificacion=>{
         this.Notificaciones.push(notificacion)
         console.log(this.Notificaciones)
