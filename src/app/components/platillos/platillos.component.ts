@@ -2,12 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PedidosService } from 'src/app/services/pedidos.service';
 import {PlatillosService} from '../../services/platillos.service'
-<<<<<<< HEAD
 import Swal from'sweetalert2';
-=======
 import {ClimaService} from '../../services/clima.service'
 
->>>>>>> 922259531c5c0cb63c8da74b6f40386d92e30130
 @Component({
   selector: 'app-platillos',
   templateUrl: './platillos.component.html',
