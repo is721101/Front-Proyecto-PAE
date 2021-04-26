@@ -1,28 +1,29 @@
 <div class="landing-page">
     <body>
-        <header>
+        <header [class.sticky] ="header_variable">
             <a href="#" class="logo">Hamburguer <span>.</span></a>
-            <div class="menuToggle" onclick="toggleMenu();"></div>
+            <div class="menuToggle" (click)="toggleMenu();"></div>
             <ul class="navigation">
-                <li><a href="#banner">Home</a></li>
-                <li><a href="#about">Nosotros</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#expert">Expert</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a  (click)="toHome()" > >Home</a></li>
+                <li><a  (click)="toAbout()" > Nosotros</a></li>
+                <li><a (click)="toMenu()" > Menu</a></li>
+                <li><a  (click)="toExpert()" >Expert</a></li>
+                <li><a  (click)="toTestimonials()" > Testimonials</a></li>
             </ul>
         </header>
         <section class="banner" id="banner">
             <div class="content">
                 <h2>Always Choose Good</h2>
+                <br>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Obcaecati eaque suscipit repellendus incidunt rerum ex quasi voluptatum officia sed dolores,
                     cumque velit distinctio impedit mollitia exercitationem nisi odio sequi sit?
                 </p>
-                <a href="#" class="btn">Ingresar</a>
+        
+                <a href="/login"  class="btn">Ingresar</a>
             </div>
         </section>
-        <section class="about" id="about">
+        <section class="about" id="about" #about>
             <div class="row">
                 <div class="col50">
                     <h2 class="titleText"><span>N</span>osotros</h2>
@@ -76,7 +77,7 @@
             </div>
 
             <div class="title">
-                <a href="#" class="btn">View all</a>
+                <a    href="/login" class="btn">View all</a>
             </div>
 
         </section>
