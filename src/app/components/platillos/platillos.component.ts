@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PedidosService } from 'src/app/services/pedidos.service';
 import {PlatillosService} from '../../services/platillos.service'
-
+import Swal from'sweetalert2';
 @Component({
   selector: 'app-platillos',
   templateUrl: './platillos.component.html',
@@ -40,7 +40,10 @@ export class PlatillosComponent implements OnInit {
       res=>console.log(res),
       err=>console.log(err)
     )
-    alert("En un momento llegará un mesero a su mesa")
+    Swal.fire({
+      icon: 'success',
+      title: 'En un momento llegará un mesero a atenderlo'
+    })
   }
   //Suma y resta del modal
   suma(){

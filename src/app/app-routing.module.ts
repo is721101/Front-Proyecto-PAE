@@ -13,6 +13,8 @@ import { PlatilloCRUDComponent } from './components/platillo-crud/platillo-crud.
 import { LoginCrudComponent } from './login-crud/login-crud.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
+
+ 
 const routes: Routes = [
   {path:"",component:LoginComponent},
   {path:"login",component:LoginComponent},
