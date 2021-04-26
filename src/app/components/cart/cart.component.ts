@@ -3,7 +3,7 @@ import { PedidosService } from 'src/app/services/pedidos.service';
 import { PlatillosService } from 'src/app/services/platillos.service';
 import {MesaService} from 'src/app/services/mesa.service'
 import { Router } from '@angular/router'
-
+import {ClimaService} from '../../services/clima.service'
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -11,11 +11,17 @@ import { Router } from '@angular/router'
 })
 export class CartComponent implements OnInit {
   total=0
+  temperatura:any
   pedidos=<any>[];
-  constructor(private router:Router,private pedidoService: PedidosService, private platilloService: PlatillosService,private MesaService:MesaService) { }
+  constructor(private clima: ClimaService,private router:Router,private pedidoService: PedidosService, private platilloService: PlatillosService,private MesaService:MesaService) { }
 //Cambiar por la mesa dinámica
   ngOnInit(): void {
-    console.log(this.pedidoService.table)
+    this.clima.getClima()
+    .subscribe(
+      res=>this.temperatura=res,
+      err=>console.log(err)
+    )
+ 
     this.pedidoService.getPedidos(this.pedidoService.table)
      .subscribe(
       res=>{

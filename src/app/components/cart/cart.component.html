@@ -21,6 +21,9 @@
       <li class="nav-item">
         <a class="nav-link" (click)="getWaiter()">Solicitar mesero</a>
       </li>
+      <div *ngIf="temperatura" class="list-group">
+        <a  class="nav-link">{{temperatura.main.temp}}°C</a>
+      </div>
 
     </ul>
     <h5 type="button" class="button white center" routerLink="/cuenta"> <i class="bi bi-cart-check"></i> Artículos

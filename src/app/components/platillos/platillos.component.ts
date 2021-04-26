@@ -2,14 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PedidosService } from 'src/app/services/pedidos.service';
 import {PlatillosService} from '../../services/platillos.service'
+<<<<<<< HEAD
 import Swal from'sweetalert2';
+=======
+import {ClimaService} from '../../services/clima.service'
+
+>>>>>>> 922259531c5c0cb63c8da74b6f40386d92e30130
 @Component({
   selector: 'app-platillos',
   templateUrl: './platillos.component.html',
   styleUrls: ['./platillos.component.less']
 })
 export class PlatillosComponent implements OnInit {
-  
+  temperatura:any
   platillos=[];
   platilloSelected={
     price:null,
@@ -18,9 +23,14 @@ export class PlatillosComponent implements OnInit {
     amount:0,
     table:null
   }
-  constructor(private router: Router,private platilloService: PlatillosService,private pedidoService: PedidosService) { }
+  constructor(private clima: ClimaService,private router: Router,private platilloService: PlatillosService,private pedidoService: PedidosService) { }
 
   ngOnInit(): void {
+    this.clima.getClima()
+    .subscribe(
+      res=>this.temperatura=res,
+      err=>console.log(err)
+    )
     this.platilloService.getPlatillos()
     .subscribe(
       res=>this.platillos=res,
