@@ -4,11 +4,11 @@
             <a href="#" class="logo">Hamburguer <span>.</span></a>
             <div class="menuToggle" (click)="toggleMenu();"></div>
             <ul class="navigation">
-                <li><a  (click)="toHome()" > >Home</a></li>
+                <li><a  (click)="toHome()" > Home</a></li>
                 <li><a  (click)="toAbout()" > Nosotros</a></li>
                 <li><a (click)="toMenu()" > Menu</a></li>
-                <li><a  (click)="toExpert()" >Expert</a></li>
-                <li><a  (click)="toTestimonials()" > Testimonials</a></li>
+                <li><a  (click)="toExpert()" >Equipo</a></li>
+                <li><a  (click)="toTestimonials()" > Testimonios</a></li>
             </ul>
         </header>
         <section class="banner" id="banner">
@@ -24,23 +24,25 @@
             </div>
         </section>
         <section class="about" id="about" #about>
+            <br>
             <div class="row">
                 <div class="col50">
+                    <br><br> 
                     <h2 class="titleText"><span>N</span>osotros</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam harum odit voluptatibus 
-                        magni ex, ipsa architecto adipisci, 
-                        omnis itaque nostrum suscipit temporibus vel et quas nemo numquam aliquam cum aspernatur.
+                    <p> Hamgurguer. abrió sus puertas el 3 de Febrero del 2012 como un concepto 
+                        único y novedoso en Guadalajara que ofrece el mejor surtido en ostras, ostiones, 
+                        almejas, callo de hacha, entre otros garantizando siempre la mayor frescura y calidad 
+                        en todos sus productos. <br><br>
+
+                        Hamburguer utiliza un novedoso sistema de tecnologia para la atencion al cliente, siendo uno de los pioneros
+                        en la nueva modalidad de restaurantes 
                     </p>
                     <br><br>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam harum odit voluptatibus 
-                        magni ex, ipsa architecto adipisci, 
-                        omnis itaque nostrum suscipit temporibus vel et quas nemo numquam aliquam cum aspernatur.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam harum odit voluptatibus 
-                        magni ex, ipsa architecto adipisci, 
-                        omnis itaque nostrum suscipit temporibus vel et quas nemo numquam aliquam cum aspernatur.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam harum odit voluptatibus 
-                        magni ex, ipsa architecto adipisci, 
-                        omnis itaque nostrum suscipit temporibus vel et quas nemo numquam aliquam cum aspernatur.
+                    <p>                         
+                        
+                        Es un lugar con un ambiente cálido e informal. Nuestro servicio relajado 
+                        y amigable hace que se sientan igualmente cómodos jóvenes, familias, ejecutivos
+                        o adultos mayores.
                     </p>
                 </div>
                 <div class="col50">
@@ -55,22 +57,25 @@
 
         <section class="menu" id="menu">
             <div class="title">
-                <h2 class="titleText">Our<span>M</span>enu</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Cumque nemo delectus dolorem cupiditate repudiandae ea atque quas, 
-                    sunt eligendi velit tempora possimus facilis rerum? Omnis cum repellendus id saepe dolore!
+                <h2 class="titleText">Nuestro <span>M</span>enu</h2>
+                <p>Creado por nuestros talentoso equipo de cocineros, creado con todo el amor desde nuestra cocina a su mesa
                 </p>
-                <div class="content">
-                    <div class="box" *ngFor="let platillo of LandingPageService.platillos" >
-                        <div class="imgBx">
-                            <img src={{platillo.urlImage}}>
-                        </div>
-                        <div class="text">
-                            <h3>{{platillo.description}} </h3>
+                <div class="content" >
+                    <div *ngFor="let platillo of LandingPageService.platillos;  let i=index"> 
+                        <div class="box"   *ngIf="i<5" >
+                                <div class="imgBx"  >
+                                    <img src={{platillo.urlImage}}>
+                                </div>
+                                <div class="text"    >
+                                    <h3>{{platillo.name}} </h3>
+                                </div>
                         </div>
                     </div>
                 </div>
-                 
+                
+
+
+
 
 
 
@@ -107,38 +112,34 @@
 
         <section class="testimonials" id="testimonials">
             <div class="title white">
-                <h2 class="titleText">They <span>S</span>aid About Us</h2>
-                <p>lorem ipsum dolor sit amet, consecteteur apdipiscing elit.</p>
+                <h2 class="titleText">Opiniones  <span>D</span>e nuestros clientes</h2>
+            
             </div>
             <div class="content">
                 <div class="box">
                     <div class="imgBx">
-                        <img src="./Images/testi1.jpg" >
+                        <img src="https://images.pexels.com/photos/3116381/pexels-photo-3116381.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" >
                     </div>
                     <div class="text">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing 
-                            elit. Consectetur corporis non, qui quo esse nam quam, 
-                            aspernatur temporibus quasi neque sit fugiat ipsa atque natus eligendi nulla deserunt quisquam ut?
-                            Lorem ipsum dolor sit amet consectetur adipisicing 
-                            elit. Consectetur corporis non, qui quo esse nam quam, 
-                            aspernatur temporibus quasi neque sit fugiat ipsa atque natus eligendi nulla deserunt quisquam ut?
+                        <p>Es un lugar muy peculiar, su decoración es agradable,
+                             los pisos y las paredes son de madera obscura, la luz es tenue,
+                              cuenta con lámparas grandes de cristal rojo simulando una llama de fuego,
+                               y otras parecieran un racimo de uvas gigantes de color ámbar.
                         </p>
-                        <h3>Someone Famous</h3>
+                        <h3>George Swaltz</h3>
                     </div>
                 </div>
                 <div class="box">
                     <div class="imgBx">
-                        <img src="./Images/testi2.jpg" >
+                        <img src="https://images.pexels.com/photos/842980/pexels-photo-842980.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" >
                     </div>
                     <div class="text">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing 
-                            elit. Consectetur corporis non, qui quo esse nam quam, 
-                            aspernatur temporibus quasi neque sit fugiat ipsa atque natus eligendi nulla deserunt quisquam ut?
-                            Lorem ipsum dolor sit amet consectetur adipisicing 
-                            elit. Consectetur corporis non, qui quo esse nam quam, 
-                            aspernatur temporibus quasi neque sit fugiat ipsa atque natus eligendi nulla deserunt quisquam ut?
+                        <p>El menú es extenso, hay muchas opciones, carne, pollo, pescado, quesos,
+                             en realidad recomendaría la mayoría de los platillos, pero mi favorito es la hamburguesa vegetariana,
+                              genial, es la receta tradicional servido con verduras, carne de res, elote, y  
+                              predomina ese delicioso picor de chile pasilla, lo acompaño con unas tortillitas.
                         </p>
-                        <h3>Someone Famous</h3>
+                        <h3>Javier Orozco</h3>
                     </div>
                 </div>
                 <div class="box">
