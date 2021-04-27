@@ -16,7 +16,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 
  
 const routes: Routes = [
-  {path:"",component:LoginComponent},
+  {path:"",component:LandingPageComponent},
   {path:"login",component:LoginComponent},
   {path:"platillos",component:PlatillosComponent, canActivate:[MiddleGuard]},
   {path:"cuenta",component:CartComponent,canActivate:[MiddleGuard]},

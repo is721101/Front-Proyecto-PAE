@@ -13,13 +13,12 @@
         </header>
         <section class="banner" id="banner">
             <div class="content">
-                <h2>Always Choose Good</h2>
+                <h2>Lo mejor de lo mejor</h2>
                 <br>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Obcaecati eaque suscipit repellendus incidunt rerum ex quasi voluptatum officia sed dolores,
-                    cumque velit distinctio impedit mollitia exercitationem nisi odio sequi sit?
+                <p> Con el firme objetivo de ofrecer una experiencia nueva, crearon las hamburguesas de gran tamaño con carne gruesa y jugosa al carbón,
+                    en una parrilla patentada llamada Gira-Grill, haciendo sentir al comensal, que estaría disfrutando de un fin de semana en familia.
+                   
                 </p>
-        
                 <a href="/login"  class="btn">Ingresar</a>
             </div>
         </section>
@@ -89,7 +88,7 @@
 
         <section class="expert" id="expert">
             <div class="title">
-                <h2 class="titleText">Our Kitechen <span>E</span>xpert</h2>
+                <h2 class="titleText">Nuestros <span>E</span>xpertos en cocina</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos assumenda deserunt 
                     odit laudantium! Adipisci, dolores! Saepe amet a ipsam quisquam consequatur autem assumenda perferendis 
                     libero qui, minus necessitatibus illo! Recusandae.
@@ -97,7 +96,7 @@
                 <div class="content">
                     <div class="box" *ngFor="let employee of LandingPageService.employees" >
                         <div class="imgBx">
-                            <img src="https://images.pexels.com/photos/4457124/pexels-photo-4457124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+                            <img src={{employee.urlImage}} alt="">
                         </div>
                         <div class="text">
                             <h2>{{employee.name}} {{employee.lastname}}</h2>

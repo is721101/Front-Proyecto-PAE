@@ -27,7 +27,8 @@ export class LandingPageService {
     position:'',
     salary: 0,
     email:'',
-    password:''
+    password:'',
+    urlImage:''
   };
 
   platillos : Platillo[];

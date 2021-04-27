@@ -17,7 +17,8 @@ export class EmployeeCRUDService {
     position:'',
     salary: 0,
     email:'',
-    password:''
+    password:'',
+    urlImage:''
   };
 
   employees : Employee[];
