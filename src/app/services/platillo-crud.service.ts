@@ -15,7 +15,8 @@ export class PlatilloCRUDService {
     description:'',
     urlImage:'',
     name: '',
-    price:''
+    price:'',
+    category:''
   };
 
   platillos : Platillo[];

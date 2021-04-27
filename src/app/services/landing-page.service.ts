@@ -17,7 +17,8 @@ export class LandingPageService {
     description:'',
     urlImage:'',
     name: '',
-    price:''
+    price:'',
+    category:''
   };
 
   selectedEmployee : Employee ={
