@@ -79,8 +79,24 @@ export class PlatillosComponent implements OnInit {
       },
       err=>console.log("No enviado")
     )
+  }
+
+  HamburguersSelected(){
     
+  }
+
+  EntradasSelected(){
 
   }
+
+  PostresSelected(){
+
+  }
+
+  EnsaladasSelected(){
+
+  }
+
+
   
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MesaService} from '../../services/mesa.service'
 import {CorreoService} from '../../services/correo.service'
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-ordenar',
   templateUrl: './ordenar.component.html',
@@ -10,7 +11,7 @@ export class OrdenarComponent implements OnInit {
   id:Number
   correo:string
   codigo:string
-  constructor(private mesaService:MesaService,private correoService:CorreoService) { }
+  constructor(private mesaService:MesaService,private correoService:CorreoService,private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -30,7 +31,8 @@ export class OrdenarComponent implements OnInit {
         }
         this.correoService.sendMessage(form)
         .subscribe(
-          res=>console.log(res),
+          //this.router.navigate(['/login'])
+          res=> console.log(res) ,
           err=>console.log(err)
         )
       },
