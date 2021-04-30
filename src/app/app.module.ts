@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule} from '@angular/forms';
@@ -21,6 +21,8 @@ import { PlatilloCRUDComponent } from './components/platillo-crud/platillo-crud.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginCrudComponent } from './login-crud/login-crud.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import {AuthGuard} from './auth.guard'
+import {TokenInterceptorService} from './services/token-interceptor.service'
 
 @NgModule({
   declarations: [
@@ -49,7 +51,14 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
     MatButtonModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass:TokenInterceptorService,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

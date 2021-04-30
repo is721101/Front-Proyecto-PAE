@@ -12,7 +12,7 @@ import { MesaCRUDComponent } from './components/mesa-crud/mesa-crud.component';
 import { PlatilloCRUDComponent } from './components/platillo-crud/platillo-crud.component';
 import { LoginCrudComponent } from './login-crud/login-crud.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
-
+import {AuthGuard } from './auth.guard'
 
  
 const routes: Routes = [
@@ -22,12 +22,12 @@ const routes: Routes = [
   {path:"cuenta",component:CartComponent,canActivate:[MiddleGuard]},
   {path:"ordenar",component:OrdenarComponent},
   {path:"agradecimiento",component:GraciasComponent},
-  {path: 'CRUD',component:EmployeeCRUDComponent},
-  {path: 'CRUD/employees',component:EmployeeCRUDComponent},
-  {path: 'CRUD/mesas',component:MesaCRUDComponent},
-  {path: 'CRUD/platillos',component:PlatilloCRUDComponent},
-  {path: 'CRUD/login', component:LoginCrudComponent},
-  {path: 'CRUD/notificaciones', component:NotificacionesComponent},
+  {path: 'CRUD',component:EmployeeCRUDComponent, canActivate:[AuthGuard]},
+  {path: 'CRUD/employees',component:EmployeeCRUDComponent, canActivate:[AuthGuard]},
+  {path: 'CRUD/mesas',component:MesaCRUDComponent, canActivate:[AuthGuard]},
+  {path: 'CRUD/platillos',component:PlatilloCRUDComponent, canActivate:[AuthGuard]},
+  {path: 'CRUD/login', component:LoginCrudComponent },
+  {path: 'CRUD/notificaciones', component:NotificacionesComponent, canActivate:[AuthGuard]},
   {path: 'landingpage',component:LandingPageComponent}
 ];
 
