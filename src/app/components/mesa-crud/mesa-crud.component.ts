@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MesaCRUDService } from '../../services/mesa-crud.service';
 import { NgForm } from '@angular/forms'
 import { Mesa } from 'src/app/models/mesas';
-
+import { PageEvent } from '@angular/material/paginator';
 
 
 @Component({
@@ -64,5 +64,14 @@ export class MesaCRUDComponent implements OnInit {
     this.MesaService.selectedMesa = mesa;
   }
 
+  handlePage(e:PageEvent){
+    this.page_size=e.pageSize
+    this.page_number=e.pageIndex+1
+  }
+   
 
+  page_size: number = 5
+  page_number : number =1
+
+  pageSizeOptions = [5,10,20,50,100]
 }

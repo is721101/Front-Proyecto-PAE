@@ -41,7 +41,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let mesa of MesaService.mesas"> 
+                <tr *ngFor="let mesa of MesaService.mesas | paginate:page_size:page_number"> 
                     <td>{{mesa.id}}</td>
                     <td>{{mesa.activo}}</td>
                     <td>{{mesa.codigo}}</td>
@@ -53,5 +53,10 @@
 
             </tbody>
         </table>
+        <mat-paginator [length]="MesaService.mesas.length"
+        [pageSize]="page_size"
+        [pageSizeOptions]="pageSizeOptions"
+        (page) ='handlePage($event)'>
+</mat-paginator>
     </div>
 </div>

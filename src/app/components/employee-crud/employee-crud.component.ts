@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EmployeeCRUDService } from '../../services/employee-crud.service';
 import { NgForm } from '@angular/forms'
 import { Employee } from 'src/app/models/employees';
-
+import { PageEvent } from '@angular/material/paginator';
 @Component({
   selector: 'app-employee',
   templateUrl: './employee-crud.component.html',
@@ -62,4 +62,14 @@ export class EmployeeCRUDComponent implements OnInit {
     this.EmployeeService.selectedEmployee = employee;
   }
 
+  handlePage(e:PageEvent){
+    this.page_size=e.pageSize
+    this.page_number=e.pageIndex+1
+  }
+   
+
+  page_size: number = 5
+  page_number : number =1
+
+  pageSizeOptions = [5,10,20,50,100]
 }

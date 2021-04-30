@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PlatilloCRUDService } from '../../services/platillo-crud.service';
 import { NgForm } from '@angular/forms'
 import { Platillo } from 'src/app/models/platillos';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-platillo',
@@ -62,4 +63,14 @@ export class PlatilloCRUDComponent implements OnInit {
     this.PlatilloService.selectedPlatillo = platillo;
   }
 
+  handlePage(e:PageEvent){
+    this.page_size=e.pageSize
+    this.page_number=e.pageIndex+1
+  }
+   
+
+  page_size: number = 5
+  page_number : number =1
+
+  pageSizeOptions = [5,10,20,50,100]
 }

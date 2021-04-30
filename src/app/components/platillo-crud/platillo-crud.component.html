@@ -56,7 +56,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let platillo of PlatilloService.platillos"> 
+                <tr *ngFor="let platillo of PlatilloService.platillos | paginate:page_size:page_number "> 
                     <td>{{platillo.id}}</td>
                     <td>{{platillo.description}}</td>
                     <td>{{platillo.name}}</td>
@@ -67,9 +67,16 @@
                         <button class="btn btn-danger btn-sm" (click)="deletePlatillo(platillo._id)" ><i class="material-icons">delete</i></button>
                     </td>
                 </tr>
-
+        
             </tbody>
+   
         </table>
+
+        <mat-paginator [length]="PlatilloService.platillos.length"
+        [pageSize]="page_size"
+        [pageSizeOptions]="pageSizeOptions"
+        (page) ='handlePage($event)'>
+</mat-paginator>
     </div>
 
 
