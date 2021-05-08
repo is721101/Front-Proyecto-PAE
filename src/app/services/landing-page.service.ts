@@ -17,7 +17,8 @@ export class LandingPageService {
     description:'',
     urlImage:'',
     name: '',
-    price:''
+    price:'',
+    category:''
   };
 
   selectedEmployee : Employee ={
@@ -27,7 +28,8 @@ export class LandingPageService {
     position:'',
     salary: 0,
     email:'',
-    password:''
+    password:'',
+    urlImage:''
   };
 
   platillos : Platillo[];

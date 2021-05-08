@@ -5,7 +5,7 @@
             <thead>
                 <tr>
                     <th>
-                        ID
+                        Mesa
                     </th>
                     <th>
                         Description
@@ -14,7 +14,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let notificacion of Notificaciones ; index as i"> 
-                    <td>{{notificacion.mesa}}</td>
+                    <td> # {{notificacion.mesa}}</td>
                     <td>{{notificacion.tipo}}</td>
                     <td>
                         <button class="btn btn-secondary btn-sm" (click)="Delete(i,notificacion._id)">Servir</button>

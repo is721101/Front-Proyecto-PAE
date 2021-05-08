@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PedidosService } from 'src/app/services/pedidos.service';
 import {PlatillosService} from '../../services/platillos.service'
+import Swal from'sweetalert2';
 import {ClimaService} from '../../services/clima.service'
 
 @Component({
@@ -60,7 +61,10 @@ export class PlatillosComponent implements OnInit {
       res=>console.log(res),
       err=>console.log(err)
     )
-    alert("En un momento llegará un mesero a su mesa")
+    Swal.fire({
+      icon: 'success',
+      title: 'En un momento llegará un mesero a atenderlo'
+    })
   }
   //Suma y resta del modal
   suma(){
@@ -89,7 +93,21 @@ export class PlatillosComponent implements OnInit {
       },
       err=>console.log("No enviado")
     )
+  }
+
+  HamburguersSelected(){
     
+  }
+
+  EntradasSelected(){
+
+  }
+
+  PostresSelected(){
+
+  }
+
+  EnsaladasSelected(){
 
   }
   //Filtrar los platillos por categoría
@@ -124,5 +142,7 @@ export class PlatillosComponent implements OnInit {
     }
      return newArray;
 }
+
+
   
 }

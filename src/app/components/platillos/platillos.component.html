@@ -100,30 +100,19 @@ margin-top: 0px;
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
     <!-- menu -->
     <div class="menu segments bg-second">
         <div class="container">
             <div class="section-title">
-                <h3>Menu</h3>
             </div>
             <div class="row no-mb">
                 <div class="col s12">
-                    <ul class="tabs">
-                        <li class="tab col s3"><a class="active" href="#tabs1">Food</a></li>
-                        <li class="tab col s3"><a href="#tabs2">Drink</a></li>
-                        <li class="tab col s3"><a href="#tabs3">Snack</a></li>
-                        <li class="tab col s3"><a href="#tabs4">Dessert</a></li>
+                    <ul class="tabs"  >
+                        <li class="tab col s3" id="hamburguesas"><a class="active" href="#tabs1" (click)="HamburguersSelected()" >Hamburguesas</a></li>
+                        <li class="tab col s3" id="entradas"><a  (click)="EntradasSelected()" >Entradas</a></li>
+                        <li class="tab col s3" id="postres"><a  (click)="PostresSelected()" >Postres</a></li>
+                        <li class="tab col s3" id="ensaladas"><a  (click)="EnsaladasSelected()" >Ensaladas</a></li>
+                        <li class="tab col s3" id="bebidas"><a  >Bebidas</a></li>
                     <li class="indicator" style="left: 0px; right: 241px;"></li></ul>
                 </div>
             </div>

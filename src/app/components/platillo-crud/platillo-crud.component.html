@@ -18,6 +18,9 @@
                         <input type="text" name="name" class="form-control" placeholder="Enter name" [(ngModel)]="PlatilloService.selectedPlatillo.name" >
                     </div>
                     <div class="form-group">
+                        <input type="text" name="category" class="form-control" placeholder="Enter category" [(ngModel)]="PlatilloService.selectedPlatillo.category" >
+                    </div>
+                    <div class="form-group">
                         <input type="text" name="price" class="form-control" placeholder="Enter price" [(ngModel)]="PlatilloService.selectedPlatillo.price" >
                     </div>
                     <button class="btn btn-primary mr-2" (click)="resetForm(platilloForm)">
@@ -40,11 +43,12 @@
                     <th>
                         Description
                     </th>
-                    <th>
-                        Url
-                    </th>
+                    
                     <th>
                         Name
+                    </th>
+                    <th>
+                        Category
                     </th>
                     <th>
                         Price
@@ -52,20 +56,27 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let platillo of PlatilloService.platillos"> 
+                <tr *ngFor="let platillo of PlatilloService.platillos | paginate:page_size:page_number "> 
                     <td>{{platillo.id}}</td>
                     <td>{{platillo.description}}</td>
-                    <td>{{platillo.urlImage}}</td>
                     <td>{{platillo.name}}</td>
+                    <td>{{platillo.category}}</td>
                     <td>{{platillo.price}}</td>
                     <td>
                         <button class="btn btn-secondary btn-sm" (click)="editPlatillo(platillo)" ><i class="material-icons">edit</i></button>
                         <button class="btn btn-danger btn-sm" (click)="deletePlatillo(platillo._id)" ><i class="material-icons">delete</i></button>
                     </td>
                 </tr>
-
+        
             </tbody>
+   
         </table>
+
+        <mat-paginator [length]="PlatilloService.platillos.length"
+        [pageSize]="page_size"
+        [pageSizeOptions]="pageSizeOptions"
+        (page) ='handlePage($event)'>
+</mat-paginator>
     </div>
 
 

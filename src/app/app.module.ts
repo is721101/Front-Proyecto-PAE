@@ -1,10 +1,11 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule} from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatPaginatorModule} from '@angular/material/paginator'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +22,9 @@ import { PlatilloCRUDComponent } from './components/platillo-crud/platillo-crud.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginCrudComponent } from './login-crud/login-crud.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import {AuthGuard} from './auth.guard'
+import {TokenInterceptorService} from './services/token-interceptor.service';
+import { PaginatePipe } from './pipes/paginate.pipe'
 
 @NgModule({
   declarations: [
@@ -37,6 +41,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
     PlatilloCRUDComponent,
     LoginCrudComponent,
     LandingPageComponent,
+    PaginatePipe,
     
   ],
   imports: [
@@ -47,9 +52,17 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
     FormsModule,
     MatToolbarModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatPaginatorModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass:TokenInterceptorService,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

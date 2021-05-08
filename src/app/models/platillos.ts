@@ -4,6 +4,7 @@ export interface Platillo{
     urlImage: String;
     name : String;
     price : String;
+    category:String;
     createdAt? : String;
     updatedAt? : String;
     _id? : String;
