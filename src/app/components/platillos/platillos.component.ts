@@ -12,6 +12,8 @@ import {ClimaService} from '../../services/clima.service'
 export class PlatillosComponent implements OnInit {
   temperatura:any
   platillos=[];
+  categorias=[];
+  platillosTotales=[];
   platilloSelected={
     price:null,
     description:null,
@@ -29,7 +31,19 @@ export class PlatillosComponent implements OnInit {
     )
     this.platilloService.getPlatillos()
     .subscribe(
-      res=>this.platillos=res,
+      res=>{
+        this.platillosTotales=res;
+        this.categorias= this.platillosTotales.map(function (e){
+          let category={
+            nombre:e.category,
+            class:""
+          }
+          return category;
+        })
+        let uniqueArray = this.removeDuplicates(this.categorias, "nombre");
+        this.categorias=uniqueArray;
+        this.filter(this.categorias[0].nombre)
+      },
       err=>console.log(err)
     )
   }
@@ -78,5 +92,37 @@ export class PlatillosComponent implements OnInit {
     
 
   }
+  //Filtrar los platillos por categoría
+  filter(category:String){
+    this.platillos.splice(0)
+    this.categorias.forEach(element => {
+      element.class="";
+      if(element.nombre==category){
+        element.class="active"
+      }
+    });
+    this.platillosTotales.forEach(element => {
+      if(element.categoria==category){
+        this.platillos.push(element)
+      }
+    });
+  }
+  
+
+
+
+  removeDuplicates(originalArray, prop) {
+    let newArray = [];
+    let lookupObject  = {};
+
+    for(let i in originalArray) {
+       lookupObject[originalArray[i][prop]] = originalArray[i];
+    }
+
+    for(let i in lookupObject) {
+        newArray.push(lookupObject[i]);
+    }
+     return newArray;
+}
   
 }
