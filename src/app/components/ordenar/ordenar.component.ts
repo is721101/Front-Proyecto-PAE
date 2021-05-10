@@ -23,7 +23,7 @@ export class OrdenarComponent implements OnInit {
         this.id=res.id
         this.codigo=res.codigo
         this.correo=formcorreo.value
-        alert("Num de mesa: "+res.id+" Codigo: "+res.codigo)
+        //alert("Num de mesa: "+res.id+" Codigo: "+res.codigo)
         let form={
           id:this.id,
           codigo:this.codigo,
