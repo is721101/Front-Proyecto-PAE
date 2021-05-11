@@ -95,21 +95,7 @@ export class PlatillosComponent implements OnInit {
     )
   }
 
-  HamburguersSelected(){
-    
-  }
-
-  EntradasSelected(){
-
-  }
-
-  PostresSelected(){
-
-  }
-
-  EnsaladasSelected(){
-
-  }
+ 
   //Filtrar los platillos por categoría
   filter(category:String){
     this.platillos.splice(0)
@@ -120,7 +106,7 @@ export class PlatillosComponent implements OnInit {
       }
     });
     this.platillosTotales.forEach(element => {
-      if(element.categoria==category){
+      if(element.category==category){
         this.platillos.push(element)
       }
     });

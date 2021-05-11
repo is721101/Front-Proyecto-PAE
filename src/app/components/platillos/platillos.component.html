@@ -103,19 +103,32 @@ margin-top: 0px;
     <!-- menu -->
     <div class="menu segments bg-second">
         <div class="container">
-            <div class="section-title">
+          <div class="section-title">
+            <h3>Menu</h3>
+        </div>
+        <div class="row no-mb" *ngFor="let category of categorias; let in = index">
+            <div class="col s12" *ngIf="in%3==0">
+                <ul class="tabs" >
+                    <li class="tab col s3" >
+                      <a class={{category.class}} (click)="filter(category.nombre)" >{{category.nombre}}</a>
+                    </li> 
+                </ul>
             </div>
-            <div class="row no-mb">
-                <div class="col s12">
-                    <ul class="tabs"  >
-                        <li class="tab col s3" id="hamburguesas"><a class="active" href="#tabs1" (click)="HamburguersSelected()" >Hamburguesas</a></li>
-                        <li class="tab col s3" id="entradas"><a  (click)="EntradasSelected()" >Entradas</a></li>
-                        <li class="tab col s3" id="postres"><a  (click)="PostresSelected()" >Postres</a></li>
-                        <li class="tab col s3" id="ensaladas"><a  (click)="EnsaladasSelected()" >Ensaladas</a></li>
-                        <li class="tab col s3" id="bebidas"><a  >Bebidas</a></li>
-                    <li class="indicator" style="left: 0px; right: 241px;"></li></ul>
-                </div>
-            </div>
+            <div class="col s12" *ngIf= "(in + 1 < categorias.length && in%3==0)">
+              <ul class="tabs" >
+                  <li class="tab col s3" >
+                    <a class={{categorias[in+1].class}} (click)="filter(categorias[in+1].nombre)" >{{categorias[in+1].nombre}}</a>
+                  </li>
+              </ul>
+          </div>
+          <div class="col s12" *ngIf= "(in + 2 < categorias.length && in%3==0)">
+            <ul class="tabs" >
+                <li class="tab col s3" >
+                  <a class={{categorias[in+2].class}} (click)="filter(categorias[in+2].nombre)" >{{categorias[in+2].nombre}}</a>
+                </li>
+            </ul>
+        </div>
+        </div>
             <div id="tabs1" class="active">
                 <div class="row" *ngFor ="let platillo of platillos; let i = index" >
                   
