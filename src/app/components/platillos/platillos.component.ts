@@ -11,7 +11,7 @@ import {ClimaService} from '../../services/clima.service'
   styleUrls: ['./platillos.component.less']
 })
 export class PlatillosComponent implements OnInit {
-  temperatura:any
+  temperatura:string
   platillos=[];
   categorias=[];
   platillosTotales=[];
@@ -27,7 +27,11 @@ export class PlatillosComponent implements OnInit {
   ngOnInit(): void {
     this.clima.getClima()
     .subscribe(
-      res=>this.temperatura=res,
+      res=>{
+        console.log("La respuesta es "+res)
+        this.temperatura=res  
+            
+      },
       err=>console.log(err)
     )
     this.platilloService.getPlatillos()

@@ -20,7 +20,7 @@ export class MesaCRUDComponent implements OnInit {
     this.getMesas();
     this.Subscription=this.ServiceMesa.SocketMesa().subscribe({
       next:(mesa=>{
-        console.log(mesa);
+        console.log(mesa.id);
         let m=this.MESAS.findIndex(x=>x.id=mesa.id);
         this.MESAS[m].codigo=mesa.codigo
         if(this.MESAS[m].activo){
@@ -84,6 +84,9 @@ export class MesaCRUDComponent implements OnInit {
   handlePage(e:PageEvent){
     this.page_size=e.pageSize
     this.page_number=e.pageIndex+1
+  }
+  ngOnDestroy():void{
+    this.Subscription.unsubscribe()
   }
    
 

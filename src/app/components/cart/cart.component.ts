@@ -11,7 +11,7 @@ import {ClimaService} from '../../services/clima.service'
 })
 export class CartComponent implements OnInit {
   total=0
-  temperatura:any
+  temperatura:string
   pedidos=<any>[];
   constructor(private clima: ClimaService,private router:Router,private pedidoService: PedidosService, private platilloService: PlatillosService,private MesaService:MesaService) { }
 //Cambiar por la mesa dinámica

@@ -28,7 +28,7 @@ export class MesaService {
   Liberarmesa(id){
     let resp =this.http.put<Mesa>(this.URI+"/",id);
     if(resp){
-      this.EnviarCodigo(id,"Libre")
+      this.EnviarCodigo(id.id,"Libre")
     }
     
     return resp;

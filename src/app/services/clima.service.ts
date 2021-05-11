@@ -5,14 +5,13 @@ import {HttpClient} from '@angular/common/http'
   providedIn: 'root'
 })
 export class ClimaService {
-  URI:string;
-  Key="22f184c52b36ca768a1746bcea2fb9b0"
+
   
-  constructor(private http: HttpClient) {
-    this.URI='http://api.openweathermap.org/data/2.5/weather?q=Tlaquepaque&appid='+this.Key+'&units=metric'
-   }
+  constructor(private http: HttpClient) {}
 
   getClima(){
-    return this.http.get(this.URI);
+
+    return  this.http.get<string>('http://localhost:3000/clima');
+    
   }
 }
