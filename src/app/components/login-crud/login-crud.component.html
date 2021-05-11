@@ -8,6 +8,7 @@
                             <input type="text" [(ngModel)] ="employee.email" name="email" placeholder="Email">
                             <input type="password" [(ngModel)] ="employee.password"  name="password" placeholder="Password">
                             <input type="submit" name="" value="Login">
+                            <button type="button" class="btn btn-danger" id='google-login' (click)="GoogleAuth()">Login with Google</button>
                         </form>
                 </div>
             </div>

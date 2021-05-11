@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MesaService} from '../../services/mesa.service'
 import {CorreoService} from '../../services/correo.service'
 import {Router} from '@angular/router';
+
 import Swal from'sweetalert2';
 @Component({
   selector: 'app-ordenar',
@@ -37,6 +38,7 @@ export class OrdenarComponent implements OnInit {
           res=>console.log(res),
           err=>console.log(err)
         )
+        this.mesaService.EnviarCodigo(res.id,res.codigo)
         this.router.navigate(['/login']) 
       },
       err=>{

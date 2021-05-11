@@ -20,11 +20,12 @@ import { EmployeeCRUDComponent } from './components/employee-crud/employee-crud.
 import { MesaCRUDComponent } from './components/mesa-crud/mesa-crud.component';
 import { PlatilloCRUDComponent } from './components/platillo-crud/platillo-crud.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginCrudComponent } from './login-crud/login-crud.component';
+import { LoginCrudComponent } from './components/login-crud/login-crud.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import {AuthGuard} from './auth.guard'
 import {TokenInterceptorService} from './services/token-interceptor.service';
-import { PaginatePipe } from './pipes/paginate.pipe'
+import { PaginatePipe } from './pipes/paginate.pipe';
+
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { PaginatePipe } from './pipes/paginate.pipe'
     LoginCrudComponent,
     LandingPageComponent,
     PaginatePipe,
+
     
   ],
   imports: [

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../services/auth.service';
+import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
+import Swal from'sweetalert2';
+
 
 @Component({
   selector: 'app-login-crud',
@@ -14,7 +16,8 @@ export class LoginCrudComponent implements OnInit {
     password:''
   };
   constructor(private AuthService:AuthService,
-              private router:Router) { }
+              private router:Router,
+             ) { }
 
   ngOnInit(): void {
   }
@@ -26,7 +29,14 @@ export class LoginCrudComponent implements OnInit {
         localStorage.setItem('token', res.token);
         this.router.navigate(['/CRUD']);
       },
-      err => console.log(err)
+      err => Swal.fire({
+        icon: 'error',
+        title: 'Correo o contraseña incorrecto'
+      })
     )
+  }
+  GoogleAuth(){
+    console.log("nada")
+    
   }
 }
