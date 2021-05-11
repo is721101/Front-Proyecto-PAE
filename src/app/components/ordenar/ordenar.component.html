@@ -1,19 +1,18 @@
-<div class="container" id="Ordenar">
-    <div class="row justify-content-center pt-5 mt-5">
-        <div class="col-md-4 formulario">
-            <form (submit)="ordenar(correo)">
-                <div class="form-groud text-center ">
-                    <h1 class="text-light">Bienvenido A la carta Tlaquepaque</h1>
-                </div>
-                <div class="form-group  mx-sm-4">
+<section>
+    <div class="container"> 
+        <div class="user signupBx">
+            <div class="formBx">
+                <form (submit)="ordenar(correo)" >
+                    <h2>¡BIENVENIDO!</h2>
+                    <br>
+                     <h3>Para continuar ingresa un correo para mandarte la clave de tu mesa</h3>
                     <input type="text" #correo class="form-control" id="mesa" placeholder="Correo">
-                </div>
-                <div class="form-group  mx-sm-4">
+                   <br> <br><br>
                     <input type="submit"  id="ingresar"  class="ingresar btn btn-block" value="ACEPTAR">
-                </div>
-                
-            </form>
+                </form>
+            </div>
+        <div class="imgBx"> <img src="https://images.pexels.com/photos/262896/pexels-photo-262896.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" ></div>
         </div>
-    </div>
-</div>
 
+    </div>
+</section>

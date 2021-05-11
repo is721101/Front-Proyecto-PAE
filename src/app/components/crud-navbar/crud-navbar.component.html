@@ -1,12 +1,12 @@
-<mat-toolbar color="primary" class="mat-elevation-z8">
-    <span> <mat-icon>assignment_turned_in</mat-icon> NAVBAR</span> 
+<mat-toolbar id="navbar" color="primary" class="mat-elevation-z8">
+    <span> <mat-icon> </mat-icon> <a href="#" class="logo">Hamburguer <span>.</span></a> </span> 
     <div class="spacer"></div> 
     <a mat-button routerLink="/CRUD/employees"> Empleados</a>
     <a mat-button routerLink="/CRUD/mesas">Mesas</a>
     <a mat-button routerLink="/CRUD/platillos">Platillos</a>
     <a mat-button routerLink="/CRUD/notificaciones">Notificaciones</a>
  
-    <a mat-raised-button color="accent"  style="cursor: pointer;" (click)="logOut()" >Log Out</a>
+    <a mat-raised-button color="accent" id="logout"  style="cursor: pointer;" (click)="logOut()" >Log Out</a>
 </mat-toolbar>
 
 

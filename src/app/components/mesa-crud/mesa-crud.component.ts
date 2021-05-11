@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MesaCRUDService } from '../../services/mesa-crud.service';
+import  {MesaService} from '../../services/mesa.service'
 import { NgForm } from '@angular/forms'
 import { Mesa } from 'src/app/models/mesas';
 import { PageEvent } from '@angular/material/paginator';
-
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-mesa',
@@ -11,11 +12,27 @@ import { PageEvent } from '@angular/material/paginator';
   styleUrls: ['./mesa-crud.component.css']
 })
 export class MesaCRUDComponent implements OnInit {
-
-  constructor(public MesaService:MesaCRUDService) { }
+  MESAS:Mesa[];
+  Subscription:Subscription;
+  constructor(public MesaService:MesaCRUDService,public ServiceMesa:MesaService) { }
 
   ngOnInit(): void {
     this.getMesas();
+    this.Subscription=this.ServiceMesa.SocketMesa().subscribe({
+      next:(mesa=>{
+        console.log(mesa);
+        let m=this.MESAS.findIndex(x=>x.id=mesa.id);
+        this.MESAS[m].codigo=mesa.codigo
+        if(this.MESAS[m].activo){
+          this.MESAS[m].activo=false
+        }
+        else{
+          this.MESAS[m].activo=true
+        }
+
+      }),
+      error:(err=>console.log(err))
+    })
   }
 
   resetForm(form: NgForm){
@@ -24,7 +41,7 @@ export class MesaCRUDComponent implements OnInit {
 
   getMesas(){
     this.MesaService.getMesas().subscribe(
-      res => {this.MesaService.mesas = res;},
+      res => {this.MESAS = res;},
       err => console.log(err)
     )
   }

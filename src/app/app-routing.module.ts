@@ -10,7 +10,7 @@ import {NotificacionesComponent} from './components/notificaciones/notificacione
 import { EmployeeCRUDComponent } from './components/employee-crud/employee-crud.component';
 import { MesaCRUDComponent } from './components/mesa-crud/mesa-crud.component';
 import { PlatilloCRUDComponent } from './components/platillo-crud/platillo-crud.component';
-import { LoginCrudComponent } from './login-crud/login-crud.component';
+import { LoginCrudComponent } from './components/login-crud/login-crud.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import {AuthGuard } from './auth.guard'
 

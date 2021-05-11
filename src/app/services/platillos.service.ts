@@ -27,7 +27,7 @@ export class PlatillosService {
     let resp= this.http.post("http://localhost:3000/notification",notification)
     if(resp){
       this.socket.emit('NuevaNotificacion',notification);
-      console.log("Notidicacion enviada")
+      
     }
     
     return resp;
