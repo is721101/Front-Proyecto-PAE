@@ -26,6 +26,10 @@ import {AuthGuard} from './auth.guard'
 import {TokenInterceptorService} from './services/token-interceptor.service';
 import { PaginatePipe } from './pipes/paginate.pipe'
 
+import { AuthService2 } from './shared/guards/authService'
+import { SocialLoginModule, SocialAuthServiceConfig, GoogleLoginProvider } from 'angularx-social-login'
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +57,8 @@ import { PaginatePipe } from './pipes/paginate.pipe'
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    SocialLoginModule,
   ],
   providers: [
     AuthGuard,
@@ -61,7 +66,21 @@ import { PaginatePipe } from './pipes/paginate.pipe'
       provide: HTTP_INTERCEPTORS,
       useClass:TokenInterceptorService,
       multi:true
-    }
+    },
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider('811390821632-s34ecq4murm16e21ip2kshgs2jb4aftg.apps.googleusercontent.com')
+          }
+        ]
+      } as SocialAuthServiceConfig
+    },
+    AuthService2,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

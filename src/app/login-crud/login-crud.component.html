@@ -3,12 +3,15 @@
         <div class="user signinBx">
             <div class="imgBx"> <img src="https://images.pexels.com/photos/4543004/pexels-photo-4543004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""></div>
                 <div class="formBx">
-                    <form (submit) = "signIn()" >
+                    <form >
                         <h2>Sign In</h2>
-                            <input type="text" [(ngModel)] ="employee.email" name="email" placeholder="Email">
-                            <input type="password" [(ngModel)] ="employee.password"  name="password" placeholder="Password">
-                            <input type="submit" name="" value="Login">
-                        </form>
+                        <input type="text" [(ngModel)] ="employee.email" name="email" placeholder="Email">
+                        <input type="password" [(ngModel)] ="employee.password"  name="password" placeholder="Password">
+                        <input type="submit" (click)="signIn()" name="" value="Login">
+                        <input type="submit" (click)="signWithGoogle()" value="Login with google" style="float: right;
+                        min-inline-size: fit-content;
+                        background: black;">
+                    </form>
                 </div>
             </div>
     </div>

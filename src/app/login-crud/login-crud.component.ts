@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../services/auth.service';
 import {Router} from '@angular/router';
+import { GoogleLoginProvider, SocialAuthService, SocialUser } from 'angularx-social-login';
+import { AuthService2 } from '../shared/guards/authService';
+import { from, Subscription } from 'rxjs'
 
 @Component({
   selector: 'app-login-crud',
@@ -14,7 +17,7 @@ export class LoginCrudComponent implements OnInit {
     password:''
   };
   constructor(private AuthService:AuthService,
-              private router:Router) { }
+              private router:Router, private socialService: SocialAuthService,private authService2: AuthService2, ) { }
 
   ngOnInit(): void {
   }
@@ -24,9 +27,24 @@ export class LoginCrudComponent implements OnInit {
       res=>{
         console.log(res)
         localStorage.setItem('token', res.token);
-        this.router.navigate(['/CRUD']);
+        //this.router.navigate(['/CRUD']);
       },
       err => console.log(err)
     )
   }
+  
+  signWithGoogle() {
+    from(this.socialService.signIn(GoogleLoginProvider.PROVIDER_ID)).subscribe({
+      next: (user: SocialUser) => {
+        this.authService2.login(user);
+        //localStorage.setItem('token', user.authToken);
+        //this.router.navigate(['/CRUD']);
+      },
+      error: (error) => {
+        console.error(error)
+      }
+    })
+  }
+
+  
 }
