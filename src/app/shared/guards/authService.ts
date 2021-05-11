@@ -22,22 +22,17 @@ export class AuthService2 {
   login(user: SocialUser) {
     this.user$.next(user);
 
-
-
-    this.http.get('http://localhost:3000/api/employees', {
-    }).subscribe(response => {
-      let users= Object.values(response)
-      let encontrado=users.find(element => element.email==user.email)
-      if(encontrado != undefined){
+    this.http.post('http://localhost:3000/api/employees/verify',{"email":user.email}).subscribe(response=>{
+      if(response){
         localStorage.setItem('user', JSON.stringify(user));
         localStorage.setItem('token', user.authToken);
         this.router.navigate(['/CRUD']);
-      }
-      else{
+      }else{
         alert("No tienes acceso")
         this.logout()
       }
-    });
+    })
+
   }
 
   logout() {
