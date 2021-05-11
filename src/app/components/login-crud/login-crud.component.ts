@@ -29,7 +29,7 @@ export class LoginCrudComponent implements OnInit {
       res=>{
         console.log(res)
         localStorage.setItem('token', res.token);
-        //this.router.navigate(['/CRUD']);
+        this.router.navigate(['/CRUD']);
       },
       err => Swal.fire({
         icon: 'error',
@@ -42,8 +42,6 @@ export class LoginCrudComponent implements OnInit {
     from(this.socialService.signIn(GoogleLoginProvider.PROVIDER_ID)).subscribe({
       next: (user: SocialUser) => {
         this.authService2.login(user);
-        //localStorage.setItem('token', user.authToken);
-        //this.router.navigate(['/CRUD']);
       },
       error: (error) => {
         console.error(error)

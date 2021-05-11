@@ -8,10 +8,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MesaService {
-  URI='Http://localhost:3000/ordenar'
+  URI='/ordenar'
   private socket:Socket;
   constructor(private http: HttpClient) { 
-    this.socket = io('ws://localhost:3000')
+    this.socket = io(location.origin.replace(/^http/, 'ws')) //localhost:3000
   }
 
   OcuparMesa(){

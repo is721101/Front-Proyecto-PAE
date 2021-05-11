@@ -7,7 +7,7 @@ import { Employee } from '../models/employees';
 })
 export class EmployeeCRUDService {
 
-  URL_API = 'http://localhost:3000/api/employees';
+  URL_API = '/api/employees';
 
 
   selectedEmployee : Employee ={

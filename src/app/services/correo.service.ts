@@ -9,6 +9,6 @@ export class CorreoService {
 
   sendMessage(body) {
     console.log(body)
-    return this.http.post('http://localhost:3000/correo', body);
+    return this.http.post('/correo', body);
     }
 }

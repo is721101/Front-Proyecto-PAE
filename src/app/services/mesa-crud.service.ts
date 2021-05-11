@@ -7,7 +7,7 @@ import { Mesa } from '../models/mesas';
 })
 export class MesaCRUDService {
 
-  URL_API = 'http://localhost:3000/api/mesas';
+  URL_API = '/api/mesas';
 
   selectedMesa : Mesa ={
    

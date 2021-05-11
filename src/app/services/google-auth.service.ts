@@ -4,7 +4,7 @@ import { HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class GoogleAuthService {
-  URI = 'http://localhost:3000/auth/';
+  URI = '/auth/';
   constructor(private http: HttpClient) { }
 
   Login(){

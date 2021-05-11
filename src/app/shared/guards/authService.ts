@@ -22,7 +22,7 @@ export class AuthService2 {
   login(user: SocialUser) {
     this.user$.next(user);
 
-    this.http.post('http://localhost:3000/api/employees/verify',{"email":user.email}).subscribe(response=>{
+    this.http.post('/api/employees/verify',{"email":user.email}).subscribe(response=>{
       if(response){
         localStorage.setItem('user', JSON.stringify(user));
         localStorage.setItem('token', user.authToken);

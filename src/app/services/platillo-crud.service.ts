@@ -8,7 +8,7 @@ import { Platillo } from '../models/platillos';
 })
 export class PlatilloCRUDService {
 
-  URL_API = 'http://localhost:3000/api/platillos';
+  URL_API = '/api/platillos';
 
   selectedPlatillo : Platillo ={
     id:0,
