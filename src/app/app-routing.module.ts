@@ -30,7 +30,7 @@ const routes: Routes = [
   {path: 'CRUD/login', component:LoginCrudComponent },
   {path: 'CRUD/notificaciones', component:NotificacionesComponent, canActivate:[AuthGuard]},
   {path: 'landingpage',component:LandingPageComponent},
-  {path: 'CRUD/upload',component:UploadComponent}
+  {path: 'CRUD/upload',component:UploadComponent, canActivate:[AuthGuard]}
 ];
 
 @NgModule({
