@@ -22,9 +22,12 @@ export class NotificacionesComponent implements OnInit {
     ) 
     this.Subscription=this.platilloService.SocketNotificacion().subscribe({
       next:(notificacion=>{
-        this.Notificaciones.push(notificacion)
-        console.log(this.Notificaciones)
-        console.log(notificacion)
+        this.platilloService.getNotificaciones()
+        .subscribe(
+          res=>{this.Notificaciones=res
+          }, 
+          err=>console.log(err)
+        ) 
       }),
       error:(err=>console.log(err))
     })
