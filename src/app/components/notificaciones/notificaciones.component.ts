@@ -7,7 +7,7 @@ import {PlatillosService} from '../../services/platillos.service'
   styleUrls: ['./notificaciones.component.less']
 })
 export class NotificacionesComponent implements OnInit {
-  Notificaciones:Object[];
+  Notificaciones:Object[]; 
   Subscription:Subscription;
   constructor(private platilloService: PlatillosService) { 
    
@@ -17,20 +17,23 @@ export class NotificacionesComponent implements OnInit {
     this.platilloService.getNotificaciones()
     .subscribe(
       res=>{this.Notificaciones=res
-      },
+      }, 
       err=>console.log(err)
     ) 
     this.Subscription=this.platilloService.SocketNotificacion().subscribe({
       next:(notificacion=>{
-        this.Notificaciones.push(notificacion)
-        console.log(this.Notificaciones)
-        console.log(notificacion)
+        this.platilloService.getNotificaciones()
+        .subscribe(
+          res=>{this.Notificaciones=res
+          }, 
+          err=>console.log(err)
+        ) 
       }),
       error:(err=>console.log(err))
     })
 
   }
-  Delete(index,id){
+  Delete(id,index){
     let n={id:id}
     console.log(n)
     this.platilloService.updatenotif(n)

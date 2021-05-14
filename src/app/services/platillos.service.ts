@@ -24,14 +24,13 @@ export class PlatillosService {
   }
   notif(notification) {
     
-    let resp= this.http.post("/notification",notification)
+    let resp= this.http.post<object>("/notification",notification)
     if(resp){
       this.socket.emit('NuevaNotificacion',notification);
+      }
       
+      return resp;
     }
-    
-    return resp;
-  }
   updatenotif(_id){
     return this.http.put<Notificacion>("/notification",_id);
   }

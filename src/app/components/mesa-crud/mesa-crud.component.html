@@ -29,13 +29,13 @@
             <thead>
                 <tr>
                     <th>
-                        ID
+                        #
                     </th>
                     <th>
-                        Activo
+                        Estado
                     </th>
                     <th>
-                        Codigo
+                        Código
                     </th>
  
                 </tr>
@@ -43,7 +43,7 @@
             <tbody>
                 <tr *ngFor="let mesa of MESAS | paginate:page_size:page_number"> 
                     <td>{{mesa.id}}</td>
-                    <td>{{mesa.activo}}</td>
+                    <td><span *ngIf="mesa.activo==true">Activo</span><span *ngIf="mesa.activo!=true">Inactivo</span></td>
                     <td>{{mesa.codigo}}</td>
                     <td>
                         <button class="btn btn-secondary btn-sm" (click)="editMesa(mesa)" ><i class="material-icons">edit</i></button>
