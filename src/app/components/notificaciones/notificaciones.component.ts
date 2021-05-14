@@ -36,10 +36,11 @@ export class NotificacionesComponent implements OnInit {
   Delete(id,index){
     let n={id:id}
     console.log(n)
+    this.Notificaciones.splice(index, 1);
     this.platilloService.updatenotif(n)
     .subscribe(
       res=>{
-        this.Notificaciones.splice(index, 1);
+        
         console.log(res);
       },
       err=>console.log(err)
