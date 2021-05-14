@@ -13,6 +13,7 @@ import { PlatilloCRUDComponent } from './components/platillo-crud/platillo-crud.
 import { LoginCrudComponent } from './components/login-crud/login-crud.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import {AuthGuard } from './auth.guard'
+import { UploadComponent } from './components/upload/upload.component';
 
  
 const routes: Routes = [
@@ -20,7 +21,7 @@ const routes: Routes = [
   {path:"login",component:LoginComponent},
   {path:"platillos",component:PlatillosComponent,canActivate:[MiddleGuard]},
   {path:"cuenta",component:CartComponent,canActivate:[MiddleGuard]},
-  {path:"ordenar",component:OrdenarComponent},
+  {path:"pedir",component:OrdenarComponent},
   {path:"agradecimiento",component:GraciasComponent},
   {path: 'CRUD',component:EmployeeCRUDComponent, canActivate:[AuthGuard]},
   {path: 'CRUD/employees',component:EmployeeCRUDComponent, canActivate:[AuthGuard]},
@@ -28,7 +29,8 @@ const routes: Routes = [
   {path: 'CRUD/platillos',component:PlatilloCRUDComponent, canActivate:[AuthGuard]},
   {path: 'CRUD/login', component:LoginCrudComponent },
   {path: 'CRUD/notificaciones', component:NotificacionesComponent, canActivate:[AuthGuard]},
-  {path: 'landingpage',component:LandingPageComponent}
+  {path: 'landingpage',component:LandingPageComponent},
+  {path: 'CRUD/upload',component:UploadComponent, canActivate:[AuthGuard]}
 ];
 
 @NgModule({

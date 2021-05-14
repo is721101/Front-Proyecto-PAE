@@ -3,7 +3,9 @@ import { LandingPageService } from '../../services/landing-page.service';
 import { NgForm } from '@angular/forms'
 import { Platillo } from 'src/app/models/platillos';
 import { Employee } from 'src/app/models/employees';
+import { Router } from '@angular/router';
 
+ 
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
@@ -11,9 +13,12 @@ import { Employee } from 'src/app/models/employees';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor(public LandingPageService:  LandingPageService) { }
-
+  constructor(public LandingPageService:  LandingPageService,private router:Router) { }
+  public href: string = "";
   ngOnInit(): void {
+    
+    this.href = this.router.url;
+    console.log(this.router.url);
   
     this.getPlatillos();
     this.getEmployees();

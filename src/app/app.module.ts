@@ -28,7 +28,11 @@ import { PaginatePipe } from './pipes/paginate.pipe';
 
 
 import { AuthService2 } from './shared/guards/authService'
-import { SocialLoginModule, SocialAuthServiceConfig, GoogleLoginProvider } from 'angularx-social-login'
+import { SocialLoginModule, SocialAuthServiceConfig, GoogleLoginProvider } from 'angularx-social-login';
+import { DetailsUploadComponent } from './components/upload/details-upload/details-upload.component';
+import { FormUploadComponent } from './components/upload/form-upload/form-upload.component';
+import { ListUploadComponent } from './components/upload/list-upload/list-upload.component';
+import { UploadComponent } from './components/upload/upload.component'
 
 
 @NgModule({
@@ -47,6 +51,10 @@ import { SocialLoginModule, SocialAuthServiceConfig, GoogleLoginProvider } from 
     LoginCrudComponent,
     LandingPageComponent,
     PaginatePipe,
+    DetailsUploadComponent,
+    FormUploadComponent,
+    ListUploadComponent,
+    UploadComponent,
 
     
   ],
