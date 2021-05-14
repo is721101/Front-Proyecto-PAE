@@ -57,7 +57,7 @@ export class PlatillosComponent implements OnInit {
     this.platilloSelected.name=plato.name
     this.platilloSelected.description=plato.description
     this.platilloSelected.price=plato.price  
-    this.platilloSelected.amount=0 
+    this.platilloSelected.amount=1
     this.platilloSelected.table=this.pedidoService.table
   }
   getWaiter(){
@@ -75,7 +75,7 @@ export class PlatillosComponent implements OnInit {
     this.platilloSelected.amount++
   }
   resta(){
-    if(this.platilloSelected.amount==0){
+    if(this.platilloSelected.amount==1){
       alert("No puede pedir cantidades negativas")
   }
   else{
