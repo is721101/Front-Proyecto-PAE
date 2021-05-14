@@ -23,6 +23,8 @@ export class LoginComponent implements OnInit {
         if(res=="pasa"){
           this.pedidoService.table=mesa.value
           this.pedidoService.password=id.value
+          localStorage.setItem("table",mesa.value)
+          localStorage.setItem("password",id.value)
           this.router.navigate(["/platillos"])
         }
         else{
