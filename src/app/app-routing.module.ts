@@ -21,7 +21,7 @@ const routes: Routes = [
   {path:"login",component:LoginComponent},
   {path:"platillos",component:PlatillosComponent,canActivate:[MiddleGuard]},
   {path:"cuenta",component:CartComponent,canActivate:[MiddleGuard]},
-  {path:"ordenar",component:OrdenarComponent},
+  {path:"pedir",component:OrdenarComponent},
   {path:"agradecimiento",component:GraciasComponent},
   {path: 'CRUD',component:EmployeeCRUDComponent, canActivate:[AuthGuard]},
   {path: 'CRUD/employees',component:EmployeeCRUDComponent, canActivate:[AuthGuard]},
