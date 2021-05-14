@@ -9,9 +9,9 @@ import { Socket, io } from 'socket.io-client';
 })
 export class PlatillosService {
   private socket:Socket;
-  URI='Http://localhost:3000/menu/'
+  URI='/menu/'
   constructor(private http: HttpClient) {  
-    this.socket = io('ws://localhost:3000')
+    this.socket = io(location.origin.replace(/^http/, 'ws')) //localhost:3000
   ;}
 
 
@@ -20,11 +20,11 @@ export class PlatillosService {
   }
   
   getNotificaciones(){
-    return this.http.get<Notificacion[]>("http://localhost:3000/notification")
+    return this.http.get<Notificacion[]>("/notification")
   }
   notif(notification) {
     
-    let resp= this.http.post("http://localhost:3000/notification",notification)
+    let resp= this.http.post("/notification",notification)
     if(resp){
       this.socket.emit('NuevaNotificacion',notification);
       
@@ -33,7 +33,7 @@ export class PlatillosService {
     return resp;
   }
   updatenotif(_id){
-    return this.http.put<Notificacion>("http://localhost:3000/notification",_id);
+    return this.http.put<Notificacion>("/notification",_id);
   }
   SocketNotificacion() {
     return new Observable<string>(observer => {

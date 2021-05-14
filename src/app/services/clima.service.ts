@@ -11,7 +11,7 @@ export class ClimaService {
 
   getClima(){
 
-    return  this.http.get<string>('http://localhost:3000/clima');
+    return  this.http.get<string>('/clima');
     
   }
 }

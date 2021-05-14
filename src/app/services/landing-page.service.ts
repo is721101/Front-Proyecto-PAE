@@ -8,8 +8,8 @@ import { Platillo } from '../models/platillos';
 })
 export class LandingPageService {
 
-  URL_API_PLATILLOS = 'http://localhost:3000/api/platillos';
-  URL_API_COCINEROS = 'http://localhost:3000/api/employees/cocineros';
+  URL_API_PLATILLOS = '/api/platillos';
+  URL_API_COCINEROS = '/api/employees/cocineros';
 
 
   selectedPlatillo : Platillo ={
