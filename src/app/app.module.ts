@@ -84,7 +84,7 @@ import { UploadComponent } from './components/upload/upload.component'
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider('811390821632-s34ecq4murm16e21ip2kshgs2jb4aftg.apps.googleusercontent.com')
+            provider: new GoogleLoginProvider('291276491587-enks6ul7pot8jatgh127invfiinnak6b.apps.googleusercontent.com')
           }
         ]
       } as SocialAuthServiceConfig
